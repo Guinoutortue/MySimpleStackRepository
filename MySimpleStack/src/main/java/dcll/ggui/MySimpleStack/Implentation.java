@@ -44,8 +44,14 @@ public class Implentation implements SimpleStack{
 
 	@Override
 	public Item pop() throws EmptyStackException {
-		// TODO Auto-generated method stub
-		return null;
+		Item res;
+		try {
+			res=liste.get(getSize());
+			liste.remove(getSize());
+		}catch(java.lang.IndexOutOfBoundsException e) {
+			throw new EmptyStackException();
+		}
+		return res;
 	}
 
 }
