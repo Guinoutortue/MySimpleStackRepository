@@ -7,4 +7,4 @@ public class Item {
 	public Item(String nom) {
 		this.nom = nom;
 	}
-}//plojbybe
+}
