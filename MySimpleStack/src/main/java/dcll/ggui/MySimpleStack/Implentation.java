@@ -1,4 +1,4 @@
-package dcll.kmar.MySimpleStack;
+package dcll.ggui.MySimpleStack;
 
 import java.util.ArrayList;
 import java.util.EmptyStackException;
