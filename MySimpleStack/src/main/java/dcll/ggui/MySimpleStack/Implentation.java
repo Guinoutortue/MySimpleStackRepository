@@ -2,42 +2,44 @@ package dcll.ggui.MySimpleStack;
 
 import java.util.ArrayList;
 import java.util.EmptyStackException;
+import java.lang.IndexOutOfBoundsException;
 
 public class Implentation implements SimpleStack{
 
-	private Item [] liste;
+	private ArrayList<Item> liste;
 	
-	private int nbElem;
-	
-	private final int TAILLE = 10;
 	public Implentation() {
-		liste = new Item[TAILLE];
-		nbElem = 0;
+		liste = new ArrayList<Item>();
 	}
 	
 	@Override
 	public boolean isEmpty() {
-		if(nbElem == TAILLE) {
-			return true;
+		boolean res=false;
+		if(liste.size()==0) {
+			res=true;
 		}
-		return true;
+		return res;
 	}
 
 	@Override
 	public int getSize() {
-		return TAILLE;
+		return liste.size();
 	}
 
 	@Override
 	public void push(Item item) {
-		// TODO Auto-generated method stub
-		
+		liste.add(item);
 	}
 
 	@Override
 	public Item peek() throws EmptyStackException {
-		// TODO Auto-generated method stub
-		return null;
+		Item res;
+		try {
+			res=liste.get(getSize());
+		}catch(java.lang.IndexOutOfBoundsException e) {
+			throw new EmptyStackException();
+		}
+		return res;
 	}
 
 	@Override
