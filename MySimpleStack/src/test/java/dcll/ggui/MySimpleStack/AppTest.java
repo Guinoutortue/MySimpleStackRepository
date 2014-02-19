@@ -35,4 +35,23 @@ public class AppTest
     {
         assertTrue( true );
     }
+    
+    /**
+     * test de is Empty
+     */
+    public void testEmpty()
+    {
+    	Implentation i1=new Implentation();
+        assertTrue( i1.isEmpty() );
+        i1.push(new Item("Coco"));
+        assertFalse( i1.isEmpty() );
+    }
+    
+    public void testSize()
+    {
+    	Implentation i1=new Implentation();
+        assertTrue( i1.getSize()==0 );
+        i1.push(new Item("Coco"));
+        assertTrue( i1.getSize()==1 );
+    }
 }
